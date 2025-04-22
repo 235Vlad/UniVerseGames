@@ -1,132 +1,208 @@
+
+
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniVerseGames</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            padding-bottom: 60px;
-        }
-        h1 {
-            font-size: 2.5em;
-            color: #333;
-        }
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        .info-item {
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
-        .info-item span {
-            font-weight: bold;
-        }
-        a {
-            color: #4CAF50;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        .projects {
-            margin-top: 20px;
-        }
-        .project {
-            margin-bottom: 15px;
-        }
-        .project h3 {
-            font-size: 1.5em;
-            color: #4CAF50;
-        }
-        .project p {
-            font-size: 1.1em;
-            margin: 5px 0;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Vladyslav Melnyk</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      color: #1a202c;
+      line-height: 1.6;
+      transition: background-color 0.3s;
+    }
+
+    header {
+      background-color: #1e293b;
+      color: #fff;
+      padding: 30px 0;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      font-weight: 600;
+    }
+
+    header p {
+      font-size: 1.1em;
+      opacity: 0.8;
+      margin-top: 5px;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 40px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    section, .project {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    section.show, .project.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #1e293b;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      color: #2d3748;
+    }
+
+    .info-item {
+      margin: 10px 0;
+      font-size: 1.05em;
+    }
+
+    .info-item span {
+      font-weight: 600;
+      display: inline-block;
+      width: 140px;
+      color: #4b5563;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #1d4ed8;
+    }
+
+    .projects {
+      margin-top: 40px;
+    }
+
+    .project {
+      padding: 20px;
+      border-left: 4px solid #2563eb;
+      margin-bottom: 25px;
+      background-color: #f9fafb;
+      border-radius: 8px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .project h3 {
+      font-size: 1.6em;
+      margin-bottom: 10px;
+      color: #1e40af;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1e293b;
+      color: #e2e8f0;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      .info-item span {
+        display: block;
+        width: auto;
+        margin-bottom: 5px;
+      }
+
+      main {
+        margin: 20px 10px;
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>UniVerseGames</h1>
+  <h1>Vladyslav Melnyk</h1>
+  <p>Indie Game Developer | UniVerseGames</p>
 </header>
 
 <main>
-    <h2>Hello my name is Vladyslav</h2>
-    <p>Welcome to my page! Here you can find out a little about me.</p>
-    
-    <div class="info-item">
-        <span>Name:</span> Vladyslav
-    </div>
-    <div class="info-item">
-        <span>Surname:</span> Melnyk
-    </div>
-    <div class="info-item">
-        <span>Address:</span> Osnabrück, Natruper str 227, 49090
-    </div>
-    <div class="info-item">
-        <span>Link to game in Google Play:</span> <a href="https://play.google.com/store/apps/details?id=com.companyname.UniVerseGames" target="_blank">follow in Google Play</a>
-    </div>
-    <div class="info-item">
-        <span>Number:</span> +49 0175 3704753
-    </div>
-    <div class="info-item">
-        <span>Email:</span> <a href="mailto:mini55752@gmail.com">my Email</a>
+  <section class="fade-in">
+    <h2>About Me</h2>
+    <p>I'm an independent game developer passionate about crafting engaging experiences with Unity and pixel art. Below you’ll find my released projects and how to get in touch.</p>
+
+    <div class="info-item"><span>Location:</span> Osnabrück, Germany</div>
+    <div class="info-item"><span>Email:</span> <a href="mailto:mini55752@gmail.com">mini55752@gmail.com</a></div>
+    <div class="info-item"><span>Phone:</span> +49 0175 3704753</div>
+    <div class="info-item"><span>Google Play:</span> <a href="https://play.google.com/store/apps/details?id=com.companyname.UniVerseGames" target="_blank">My Developer Profile</a></div>
+  </section>
+
+  <section class="projects fade-in">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>Pixel Tower</h3>
+      <p>A vertical pixel-art platformer game fully developed by me using Unity and C#.</p>
+      <p><a href="https://play.google.com/store/apps/details?id=com.companyname.UniVerseGames" target="_blank">Download on Google Play</a></p>
     </div>
 
-    <section class="projects">
-        <h2>My Projects</h2>
-
-        <div class="project">
-            <h3>Pixel Tower</h3>
-            <p>the game is released in the final working version</p>
-            <p>As the sole developer, I created the game using Unity, including writing code (C#), designing pixel-art graphics, and managing all stages of development.</p>
-            <p><a href="https://play.google.com/store/apps/details?id=com.companyname.UniVerseGames" target="_blank">Download Pixel Tower on Google Play</a></p>
-        </div>
-
-        <div class="project">
-            <h3>Pixel Jump</h3>
-            <p><a href="https://play.google.com/store/apps/details?id=com.companyname.UniVerseGames.PixelJump" target="_blank">Download Pixel Jump on Google Play</a></p>
-            <p>the game is released in the final working version</p>
-            <p>This project was entirely developed by me, including coding, pixel-art design, and testing.</p>
-        </div>
-    </section>
-
+    <div class="project">
+      <h3>Pixel Jump</h3>
+      <p>An arcade-style pixel jumping game available on Android. Designed and programmed entirely solo.</p>
+      <p><a href="https://play.google.com/store/apps/details?id=com.companyname.UniVerseGames.PixelJump" target="_blank">Download on Google Play</a></p>
+    </div>
+  </section>
 </main>
 
 <footer>
-    <p>&copy; 2025 My page. All rights reserved.</p>
+  <p>&copy; 2025 Vladyslav Melnyk — All rights reserved.</p>
 </footer>
+
+<script>
+  // Intersection Observer to animate sections
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.fade-in, .project').forEach(section => {
+    observer.observe(section);
+  });
+</script>
 
 </body>
 </html>
+
